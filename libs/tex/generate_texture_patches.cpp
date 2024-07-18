@@ -124,7 +124,7 @@ generate_candidate(int label, TextureView const & texture_view,
     }
 
     mve::ByteImage::Ptr byte_image;
-    byte_image = mve::image::crop(view_image, width, height, min_x, min_y, *math::Vec3uc(255, 0, 255));
+    byte_image = mve::image::crop(view_image, width, height, min_x, min_y, *math::Vec4uc(255, 0, 255, 255));
     mve::FloatImage::Ptr image = mve::image::byte_to_float_image(byte_image);
 
     if (settings.tone_mapping == TONE_MAPPING_GAMMA) {
