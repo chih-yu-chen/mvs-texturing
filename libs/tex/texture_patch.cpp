@@ -171,7 +171,7 @@ TexturePatch::get_pixel_value(math::Vec2f pixel) const {
               << color[0] << ", " << color[1] << ", " << color[2] << ")" << std::endl;
 
     // Pass the pointer to the beginning of the array
-    image->linear_at(pixel[0], pixel[1], color.begin());
+    image->linear_at(pixel[0], pixel[1], *color);
 
     std::cout << "Pixel: (" << pixel[0] << ", " << pixel[1] << ") -> Color after linear_at: ("
               << color[0] << ", " << color[1] << ", " << color[2] << ")" << std::endl;
