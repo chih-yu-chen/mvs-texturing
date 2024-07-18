@@ -7,6 +7,7 @@
  * of the BSD 3-Clause license. See the LICENSE.txt file for details.
  */
 
+#include <iostream>
 #include <set>
 
 #include <math/functions.h>
@@ -164,7 +165,11 @@ TexturePatch::get_pixel_value(math::Vec2f pixel) const {
     assert(valid_pixel(pixel));
 
     math::Vec3f color;
-    image->linear_at(pixel[0], pixel[1], color.begin());
+
+    std::cout << "Pixel: (" << pixel[0] << ", " << pixel[1] << ") -> Color: ("
+              << color[0] << ", " << color[1] << ", " << color[2] << ")" << std::endl;
+
+    image->linear_at(pixel[0], pixel[1], *color);
     return color;
 }
 
