@@ -164,7 +164,7 @@ TexturePatch::get_pixel_value(math::Vec2f pixel) const {
     assert(valid_pixel(pixel));
 
     math::Vec3f color;
-    image->linear_at(pixel[0], pixel[1], *color);
+    image->linear_at(pixel[0], pixel[1], color.begin());
     return color;
 }
 
